@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Korim - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            color: #dc2626;
+            display: inline-block;
+            margin-left: 7%;
+            padding: 10px;
+        }
+
+        .menu-icon {
+            width: 30px;
+            margin-top: 15px;
+            margin-right: 7%;
+            float: right;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: dimgrey;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b91c1c;
+        }
+
+        .about {
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-content p {
+            text-align: justify;
+        }
+
+        .about-text,
+        .skill-bars {
+            width: 100%;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            width: 33%;
+        }
+
+        .skill-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-bar-bg {
+            width: 100%;
+            background-color: #e5e7eb;
+            /* Light gray background for the skill bar */
+            height: 5px;
+            /* Adjust height to make it thinner */
+            border-radius: 0;
+            /* No border radius */
+        }
+
+        .skill-bar-fill {
+            height: 5px;
+            /* Match the height of the background */
+            background-color: #dc2626;
+            /* Red color for the filled part */
+            border-radius: 0;
+            /* No border radius */
+        }
+
+
+        .services {
+            margin-top: 2rem;
+            padding: 2rem;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            /* Centers the cards horizontally */
+            align-items: center;
+            /* Centers the cards vertically */
+            flex-wrap: wrap;
+            /* Ensures the cards wrap on smaller screens */
+            gap: 2rem;
+        }
+
+        .service-card {
+            width: 100%;
+            min-height: 150px;
+            /* Increase the height for longer cards */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.375rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 1rem;
+        }
+
+        .portfolio {
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border: 4px solid white;
+            border-radius: 0.25rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+
+        .cta {
+            background-color: #dc2626;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .cta p {
+            color: lightgrey;
+        }
+
+        .cta-btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: white;
+            color: #dc2626;
+        }
+
+        .testimonial {
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+
+        .testimonial-card {
+            max-width: 42rem;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 0 4px 8px -1px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .contact {
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+        }
+
+        .contact-form .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .contact-form .btn:hover {
+            background-color: #b91c1c;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            border: 1px solid #d1d5db;
+            font-family: inherit;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Add shadow here */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow on focus */
+            border-color: #dc2626;
+            /* Optional: change border color on focus */
+        }
+
+        textarea.form-control {
+            height: 8rem;
+            resize: vertical;
+        }
+
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                margin-top: 6rem;
+            }
+
+            .hero-content {
+                width: 50%;
+                text-align: left;
+                margin-bottom: 0;
+            }
+
+            .hero-image {
+                width: 50%;
+                margin-left: 2rem;
+            }
+
+            .about-content {
+                flex-direction: row;
+            }
+
+            .about-text,
+            .skill-bars {
+                width: 48%;
+            }
+
+            .service-cards {
+                flex-direction: row;
+            }
+
+            .service-card {
+                width: 30%;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-content {
+                flex-direction: row;
+            }
+
+            .contact-info,
+            .contact-form {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">M.K</h2>
+        <img src="menu-icon.png" alt="Menu" class="menu-icon">
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <p>Hello, I'm</p>
+                <h1>COMPETITIVE PROGRAMMER</h1>
+                <h3>Mohammad Korim</h3>
+                <p>BUET CTF Preli 7th place</p>
+                <p>ICPC Asia Dhaka Preli 213th place out of 2500+</p>
+                <a href="#work" class="btn">My Work</a>
+            </div>
+            <img src="https://placehold.co/400x400/dc2626/FFF" alt="Profile" class="hero-image">
+        </section>
+
+        <section class="about container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>I am a competitive programmer</h3>
+                    <p>I am a 2nd year student at the department of Computer Science and
+                        Engineering in Uttara University, Bangladesh.
+
+                        I am passionate about tackling complex challenges and aspire to
+                        contribute to open-source projects and programming competitions.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h4>100</h4>
+                            <p>PROJECTS COMPLETED</p>
+                        </div>
+                        <div class="stat">
+                            <h4>90</h4>
+                            <p>HAPPY CLIENTS</p>
+                        </div>
+                        <div class="stat">
+                            <h4>95</h4>
+                            <p>POSITIVE REVIEWS</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <p>C/C++</p>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Java</p>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Latex</p>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Arduino</p>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services container">
+            <h2>What I Do</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="html-icon.png" alt="Web Development" class="service-icon">
+                    <h3>Competitive Programming</h3>
+                    <p>Competing in algorithmic challenges and optimizing solutions for speed and accuracy.</p>
+                </div>
+                <div class="service-card">
+                    <img src="idea.png" alt="Creative Design" class="service-icon">
+                    <h3>Innovation</h3>
+                    <p>Rapidly prototyping functional solutions for real-world applications through hardware and
+                        software integration.</p>
+                </div>
+                <div class="service-card">
+                    <img src="picture-ic.png" alt="Photoshop" class="service-icon">
+                    <h3>Photoshop</h3>
+                    <p>Passionate about capturing the beauty of the sky, architectural structures, and natural
+                        landscapes through photography.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="portfolio container">
+            <h2>Latest Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="bdpho.png" alt="Project 1">
+                    <h4>AQI Measurement</h4>
+                    <p>DU Physics TechFair | Contest</p>
+                    <a href="#" class="btn">Live Demo</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="kibo.png" alt="Project 2">
+                    <h4>Kibo Space Robot Programming in Java</h4>
+                    <p>JAXA | Contest</p>
+                    <a href="#" class="btn">Live Demo</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Frame.png" alt="Project 3">
+                    <h4>Student Portfolio Site</h4>
+                    <p>System Design & Analysis | Course Project</p>
+                    <a href="#" class="btn">Live Demo</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="UDBMS.jpg" alt="Project 4">
+                    <h4>University Database Management System (UDBMS)</h4>
+                    <p>Data Strucutre | Course Project</p>
+                    <a href="#" class="btn">Live Demo</a>
+                </div>
+                <!-- <div class="portfolio-item">
+                    <img src="https://placehold.co/300x200/dc2626/FFF" alt="Project 5">
+                    <h4>Project Title 5</h4>
+                    <a href="#" class="btn">Live Demo</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/300x200/dc2626/FFF" alt="Project 6">
+                    <h4>Project Title 6</h4>
+                    <a href="#" class="btn">Live Demo</a>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="cta">
+            <p>Do you have any project?</p>
+            <h2>I'm Available For Freelancer Projects</h2>
+            <button class="cta-btn">Hire Me</button>
+        </section>
+
+        <section class="testimonial container">
+            <h2>Testimonial</h2>
+            <div class="testimonial-card">
+                <img src="testimonial.jpg" alt="Testimonial" class="testimonial-image">
+                <h3>Md Atiquzzaman</h3>
+                <p>National Commissioner, Bangladesh Scouts</p>
+                <p>Mohammad Korim has successfully been participating in various activities and events of
+                    Bangladesh Scouts since 2010. We wish him success in his endeavor</p>
+            </div>
+        </section>
+
+        <section class="contact container">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <img src="email-icon.png" alt="Email" class="contact-icon">
+                        <div>
+                            <h4>Email</h4>
+                            <p>2223081148@uttarauniversity.edu.bd</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="call-icon.png" alt="Phone" class="contact-icon">
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+880 17 **** ****</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="address-icon.png" alt="Address" class="contact-icon">
+                        <div>
+                            <h4>Address</h4>
+                            <p>Uttara University, Holding 77, Beribadh Road, Dhaka 1230, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mohammad Korim, All rights reserved.</p>
+    </footer>
+</body>
+
+
+</html>

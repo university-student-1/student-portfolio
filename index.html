@@ -48,6 +48,39 @@
             cursor: pointer;
         }
 
+        .sticky-notification {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: #dc2626;
+            color: white !important;
+            padding: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-notification a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .dismiss-btn {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 1rem;
+            color: white;
+            border: none;
+            background: none;
+            padding: 0;
+        }
+
+
         .hero {
             display: flex;
             flex-direction: column;
@@ -143,20 +176,14 @@
         .skill-bar-bg {
             width: 100%;
             background-color: #e5e7eb;
-            /* Light gray background for the skill bar */
             height: 5px;
-            /* Adjust height to make it thinner */
             border-radius: 0;
-            /* No border radius */
         }
 
         .skill-bar-fill {
             height: 5px;
-            /* Match the height of the background */
             background-color: #dc2626;
-            /* Red color for the filled part */
             border-radius: 0;
-            /* No border radius */
         }
 
 
@@ -168,18 +195,14 @@
         .service-cards {
             display: flex;
             justify-content: center;
-            /* Centers the cards horizontally */
             align-items: center;
-            /* Centers the cards vertically */
             flex-wrap: wrap;
-            /* Ensures the cards wrap on smaller screens */
             gap: 2rem;
         }
 
         .service-card {
             width: 100%;
             min-height: 150px;
-            /* Increase the height for longer cards */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             border-radius: 0.375rem;
             padding: 1.5rem;
@@ -324,9 +347,7 @@
 
         .form-control:focus {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            /* Stronger shadow on focus */
             border-color: #dc2626;
-            /* Optional: change border color on focus */
         }
 
         textarea.form-control {
@@ -393,10 +414,18 @@
 </head>
 
 <body>
+
     <header>
         <h2 class="logo">M.K</h2>
         <img src="menu-icon.png" alt="Menu" class="menu-icon">
     </header>
+
+    <div id="notification" class="sticky-notification">
+        <a href="https://github.com/university-student-1/student-portfolio">Github Source code:
+            github.com/university-student-1/student-portfolio</a>
+        <span id="dismiss" class="dismiss-btn">&times;</span>
+    </div>
+
 
     <main>
         <section class="hero container">

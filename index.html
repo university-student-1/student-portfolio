@@ -426,7 +426,6 @@
         <span id="dismiss" class="dismiss-btn">&times;</span>
     </div>
 
-
     <main>
         <section class="hero container">
             <div class="hero-content">
@@ -623,6 +622,13 @@
     <footer>
         <p>&copy; 2024 Mohammad Korim, All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("dismiss").addEventListener("click", function () {
+            document.getElementById("notification").style.display = "none";
+        });
+
+    </script>
 </body>
 
 
